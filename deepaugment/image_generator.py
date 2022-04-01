@@ -160,7 +160,7 @@ def test_deepaugment_image_generator():
     X = np.random.rand(200, 32, 32, 3)
 
     y = np.random.randint(10, size=200)
-    y = keras.utils.to_categorical(y)
+    y = keras.np_utils.to_categorical(y)
 
     batch_size = 64
 

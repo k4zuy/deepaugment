@@ -18,6 +18,7 @@ dir_of_file = dirname(file_path)
 sys.path.insert(0, dir_of_file)
 
 from wide_res_net import WideResidualNetwork
+from models.Resnets import cifar_WRN_28_10
 from build_features import DataOp
 from lib.decorators import Reporter
 from lib.helpers import log_and_print
@@ -198,17 +199,19 @@ class ChildCNN:
         # For WRN-40-4 put N = 6, k = 4
         _depth = int(self.config["model"].split("_")[1])  # e.g. wrn_[40]_4
         _width = int(self.config["model"].split("_")[2])  # e.g. wrn_40_[4]
-        model = WideResidualNetwork(
-            depth=_depth,
-            width=_width,
-            dropout_rate=0.0,
-            include_top=True,
-            weights=None,
-            input_tensor=None,
-            input_shape=self.input_shape,
-            classes=self.num_classes,
-            activation="softmax",
-        )
+        #model = WideResidualNetwork(
+        #    depth=_depth,
+        #    width=_width,
+        #    dropout_rate=0.0,
+        #    include_top=True,
+        #    weights=None,
+        #    input_tensor=None,
+        #    input_shape=self.input_shape,
+        #    classes=self.num_classes,
+        #    activation="softmax",
+        #)
+
+        model = cifar_WRN_28_10()
 
         adam_opt = optimizers.Adam(
             lr=0.001,

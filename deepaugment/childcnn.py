@@ -176,7 +176,7 @@ class ChildCNN:
         for layer in model.layers:
             layer.trainable = True
 
-        adam_opt = optimizers.Adam(
+        adam_opt = keras.optimizers.Adam(
             lr=0.00001,
             beta_1=0.9,
             beta_2=0.999,
@@ -215,7 +215,7 @@ class ChildCNN:
 
         model = cifar_WRN_28_10()
 
-        adam_opt = optimizers.Adam(
+        adam_opt = keras.optimizers.Adam(
             lr=0.001,
             beta_1=0.9,
             beta_2=0.999,
@@ -264,8 +264,8 @@ class ChildCNN:
         model.add(Dense(self.num_classes))
         model.add(Activation("softmax"))
 
-        optimizer = optimizers.RMSprop(lr=0.001, decay=1e-6)
-        # optimizer = optimizers.Adadelta(lr=1.0, rho=0.95, epsilon=None, decay=0.0)
+        optimizer = keras.optimizers.RMSprop(lr=0.001, decay=1e-6)
+        # optimizer = keras.optimizers.Adadelta(lr=1.0, rho=0.95, epsilon=None, decay=0.0)
         model.compile(
             optimizer=optimizer, loss="categorical_crossentropy", metrics=["accuracy"]
         )

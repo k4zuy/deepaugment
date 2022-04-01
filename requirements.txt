@@ -8,4 +8,4 @@ pandas
 scikit_optimize
 click
 numpy
-#opencv-contrib-python
+opencv-contrib-python

@@ -1,6 +1,6 @@
 matplotlib
-#tensorflow have this installed in your env already
-#keras
+tensorflow
+keras
 imgaug
 setuptools
 keras_applications

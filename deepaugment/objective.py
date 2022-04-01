@@ -79,10 +79,13 @@ class Objective:
         Returns:
             float: reward
         """
+        # acc to accuracy because of new keras version
         history_df = pd.DataFrame(history)
-        history_df["acc_overfit"] = history_df["acc"] - history_df["val_acc"]
+        #print(history_df.columns)
+        #Index(['loss', 'accuracy', 'val_loss', 'val_accuracy'], dtype='object')
+        history_df["accuracy_overfit"] = history_df["accuracy"] - history_df["val_accuracy"]
         reward = (
-            history_df[history_df["acc_overfit"] <= 0.10]["val_acc"]
+            history_df[history_df["accuracy_overfit"] <= 0.10]["val_accuracy"]
             .nlargest(self.opt_last_n_epochs)
             .mean()
         )

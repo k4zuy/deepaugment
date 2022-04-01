@@ -87,3 +87,5 @@ target/
 
 # Mypy cache
 .mypy_cache/
+pre_aug_weights.h5
+reports/experiments/04-01_13-57/notebook.csv

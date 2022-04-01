@@ -17,7 +17,9 @@ file_path = realpath(__file__)
 dir_of_file = dirname(file_path)
 sys.path.insert(0, dir_of_file)
 
-from wide_res_net import WideResidualNetwork
+#from wide_res_net import WideResidualNetwork
+# wide resnet doesnt work in tf2
+#new tf2 compatible resnet is included now
 from models.Resnets import cifar_WRN_28_10
 from build_features import DataOp
 from lib.decorators import Reporter

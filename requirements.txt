@@ -1,6 +1,6 @@
 matplotlib
-tensorflow
-keras
+#tensorflow have this installed in your env already
+#keras
 imgaug
 setuptools
 keras_applications
@@ -8,4 +8,4 @@ pandas
 scikit_optimize
 click
 numpy
-opencv-contrib-python
+#opencv-contrib-python

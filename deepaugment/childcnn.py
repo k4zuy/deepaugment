@@ -1,5 +1,7 @@
 # (C) 2019 Baris Ozmen <hbaristr@gmail.com>
 
+from tensorflow import keras
+
 from keras import optimizers, Model
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Activation, Flatten

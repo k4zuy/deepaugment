@@ -39,7 +39,10 @@ class Objective:
         Returns:
             float: trial-cost = 1 - avg. rewards from samples
         """
-
+        print("before augmenting sace train dataset")
+        #self.data["X_train"].dump("X_train_before")
+        #self.data["y_train"].dump("y_train_before")
+        
         augmented_data = augment_by_policy(
             self.data["X_train"], self.data["y_train"], *trial_hyperparams
         )

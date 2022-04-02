@@ -9,7 +9,8 @@ def normalize(X):
 
 
 def denormalize(X):
-    X_dn = (X * 255).copy()
+  
+    X_dn = (X * 255).astype(np.uint8)
     return X_dn
 
 
@@ -164,8 +165,8 @@ def augment_by_policy(
         #print("X_portion:")
         #print(str(X_portion))
         X_portion_aug = transform(hyperparams[i], hyperparams[i+1], X_portion)  # first transform
-        X_portion_aug.dump("X_aug"+str(i))
-        X_portion.dump("X"+str(i))
+        #X_portion_aug.dump("X_aug"+str(i))
+        #X_portion.dump("X"+str(i))
 
         assert (
             X_portion_aug.min() >= -0.1 and X_portion_aug.max() <= 255.1

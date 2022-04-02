@@ -63,6 +63,10 @@ def transform(aug_type, magnitude, X):
         )  # needs 0-1 values
         X_aug = denormalize(X_aug_norm)
     elif aug_type == "brighten":
+        # coarse salt and pepper for testing
+        #X_aug = iaa.CoarseSaltAndPepper(p=0.2, size_percent=magnitude).augment_images(X)
+       
+        #brighten didn't work so I replaced it with CoarseSaltanPepper
         X_aug = iaa.Add(
             (int(-40 * magnitude), int(40 * magnitude)), per_channel=0.5
         ).augment_images(
@@ -150,10 +154,18 @@ def augment_by_policy(
 
     all_X_portion_aug=None
     all_y_portion = None
+
+    #print("Länge Hyperparams:"+str(len(hyperparams)))
+    #range(start, stop, step)
     for i in range(0,len(hyperparams)-1,4):
 
+        #print("Iteration is:"+str(i))
         # transform that portion
+        #print("X_portion:")
+        #print(str(X_portion))
         X_portion_aug = transform(hyperparams[i], hyperparams[i+1], X_portion)  # first transform
+        X_portion_aug.dump("X_aug"+str(i))
+        X_portion.dump("X"+str(i))
 
         assert (
             X_portion_aug.min() >= -0.1 and X_portion_aug.max() <= 255.1

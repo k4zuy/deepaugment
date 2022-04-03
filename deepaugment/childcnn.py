@@ -214,7 +214,7 @@ class ChildCNN:
         #    classes=self.num_classes,
         #    activation="softmax",
         #)
-
+        #TODO: make wrn configurable again
         model = cifar_WRN_28_10()
 
         adam_opt = keras.optimizers.Adam(

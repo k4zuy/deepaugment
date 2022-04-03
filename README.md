@@ -1,5 +1,20 @@
 # DeepAugment
 
+## Changes in this fork
+
+This fork is a work in progress of migrating DeepAugment to Tensorflow 2.8
+I am a beginner and
+
+### How to use
+
+1. Install conda or miniconda on your system
+2. Clone this repo (the repo can not be pip installed currently because some parts ar not yet packaged correctly, since I am still learning how to do that)
+3. go inside the repo
+3. execute `conda env create -f conda_requirements_all_x86.txt` for most systems (not yet tested, maybe just use the 'deepaugment_tutorial.ipyng' notebook) or `conda env create -f conda_requirements_mac_arm64.txt` if using M1 Mac
+4. execute `conda activate tf-cv-deepaug` 
+
+## General
+
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2949929.svg)](https://doi.org/10.5281/zenodo.2949929)
 
 ![pypi](https://img.shields.io/pypi/v/deepaugment.svg?style=flat)

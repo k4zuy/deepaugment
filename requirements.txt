@@ -1,5 +1,4 @@
 matplotlib
-tensorflow
 keras
 imgaug
 setuptools
